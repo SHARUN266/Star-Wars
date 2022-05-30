@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stars Wars</title>
+</head>
+<style>
+     body{
+        /* background: #000; */
+        background-image: url('https://media.istockphoto.com/photos/moon-stars-and-dark-sky-night-banner-picture-id1317926490?b=1&k=20&m=1317926490&s=170667a&w=0&h=B1U5plDQmLhMNZ-mdcXMqPqmG1aDrelw_Gc2GpqxB0M=');
+        /* background-repeat: no-repeat; */
+        background-size: cover;
+       
+       
+        
+    }
+   
+    #container{
+        height: 500px;
+        width: 50%;
+        margin: auto;
+        /* border: 2px solid; */
+        margin-top: 5%;
+       display: grid;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: rgb(252, 231, 0);
+        font-size: 2rem;
+      
+
+
+    }
+    h1{
+        font-weight: 900;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+   h1:hover{
+       color: white;
+   }
+    #con{
+        font-weight: 900;
+        width: 700px;
+        height: 200px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: rgb(252, 231, 0);
+        
+        font-size: 1.5rem;
+       
+        
+    }
+    #box1:hover{
+        color: rgb(255, 255, 255);
+    }
+    #con>div{
+        text-align: center;
+        height: 300px;
+        width: 40%;
+        border: 2px solid;
+        border-radius: 20px;
+
+    }
+    #go_back{
+        margin: auto;
+        margin-top: 3rem;
+        height: 3rem;
+        width: 8rem;
+        background: rgba(0, 0, 0, 0);
+        color: yellow;
+        border:1px solid yellow;
+        border-radius: 10px;
+        position: relative;
+        left: 46%;
+       
+        text-align: center;
+        transition: transform 850ms;
+    }
+    #go_back:hover{
+        color: white;
+        border:1px solid rgb(253, 253, 251);
+        transform: scale(1.2);
+        background: rgba(84, 83, 83, 0.575);
+    }
+
+
+</style>
+<body>
+    <div id="container">
+        <h1>name</h1>
+        <div id="con">
+        <div id="box1">
+            <h2>Personal Info</h2>
+            <h5>Birth Year:199BBY</h5>
+            <h5>Gender:Male</h5>
+            <h5>Height:172</h5>
+
+        </div>
+        <div id="box1">
+            <h2>Anatomy</h2>
+            <h5>Eye Color:Blue</h5>
+            <h5>Mass:72</h5>
+            <h5>Hair Color:Blond</h5>
+
+
+
+
+
+        </div>
+    </div>
+
+
+      
+
+
+    </div>
+    <button id="go_back">Go Back</button>
+    
+</body>
+</html>
+<script>
+    let data=JSON.parse(localStorage.getItem('Details'))
+
+    console.log("me data hu bhai",data)
+
+    // N:name,
+    //           B:birth,
+    //           H:height,
+    //           E:eye,
+    //           M:mass,
+    //           Hi:hair
+
+    var con=document.querySelector('#container')
+    con.innerHTML=`  <h1>${data.N}</h1>
+        <div id="con">
+        <div id="box1">
+            <h2>Personal Info</h2>
+            <h5>Birth Year:${data.B}</h5>
+            <h5>Gender:${data.G}</h5>
+            <h5>Height:${data.H}</h5>
+
+        </div>
+        <div id="box1">
+            <h2>Anatomy</h2>
+            <h5>Eye Color:${data.E}</h5>
+            <h5>Mass:${data.M}</h5>
+            <h5>Hair Color:${data.Hi}</h5>
+
+      
+       
+
+
+        </div>
+
+        `
+
+        document.querySelector('#go_back').addEventListener("click",function(){
+            window.location.href='index.html'
+        })
+</script>
